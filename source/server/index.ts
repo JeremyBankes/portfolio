@@ -1,7 +1,7 @@
 import { ServerApplication } from 'framework';
 
 async function start() {
-    const application = new ServerApplication({ port: 80, static: 'public' });
+    const application = new ServerApplication({ port: 7100, static: 'public' });
 
     application.get('*', async (request, response) => {
         await response.sendFile('public/index.html');
