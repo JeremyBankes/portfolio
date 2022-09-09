@@ -1,0 +1,31 @@
+{
+    "name": "jeremy",
+    "version": "1.0.0",
+    "description": "Jeremy Bankes's portfolio.",
+    "main": "build/index.js",
+    "type": "module",
+    "scripts": {
+        "develop": "npx tsc -w",
+        "serve": "npx nodemon build/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JeremyBankes/jeremy.git"
+    },
+    "keywords": [
+        "Jeremy",
+        "Portfolio"
+    ],
+    "author": "Jeremy Bankes",
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/JeremyBankes/jeremy/issues"
+    },
+    "homepage": "https://github.com/JeremyBankes/jeremy#readme",
+    "dependencies": {
+        "framework": "file:../framework"
+    },
+    "devDependencies": {
+        "typescript": "^4.8.2"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "ES2015",
+        "target": "ES2022",
+        "moduleResolution": "Classic",
+        "esModuleInterop": true,
+        "outDir": "../../public/scripts",
+        "watch": true
+    },
+    "include": [
+        "**/*"
+    ]
+}
