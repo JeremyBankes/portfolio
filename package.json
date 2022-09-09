@@ -8,7 +8,7 @@
         "build-client": "cd source/client && npx tsc",
         "build-server": "cd source/server && npx tsc",
         "serve": "npx nodemon build/index.js",
-        "start": "npx node build/index.js"
+        "start": "node build/index.js"
     },
     "repository": {
         "type": "git",
