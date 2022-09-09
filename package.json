@@ -5,7 +5,8 @@
     "main": "build/index.js",
     "type": "module",
     "scripts": {
-        "develop": "npx tsc -w",
+        "build-client": "cd source/client && npx tsc",
+        "build-server": "cd source/server && npx tsc",
         "serve": "npx nodemon build/index.js"
     },
     "repository": {
