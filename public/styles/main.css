@@ -11,7 +11,7 @@
     --neutral-color: #aaaaaa;
     --warning-color: #ffa700;
     --negative-color: #d62d20;
-    --font-normal: monospace;
+    --font-normal: 'Roboto';
 }
 
 body {
