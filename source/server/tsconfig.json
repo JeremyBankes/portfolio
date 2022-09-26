@@ -4,8 +4,7 @@
         "target": "ES2022",
         "moduleResolution": "Node",
         "esModuleInterop": true,
-        "outDir": "../../build",
-        "watch": true
+        "outDir": "../../build"
     },
     "include": [
         "**/*"

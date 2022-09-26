@@ -4,8 +4,7 @@
         "target": "ES2022",
         "moduleResolution": "Classic",
         "esModuleInterop": true,
-        "outDir": "../../public/scripts",
-        "watch": true
+        "outDir": "../../public/scripts"
     },
     "include": [
         "**/*"

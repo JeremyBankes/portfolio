@@ -7,8 +7,11 @@
     "scripts": {
         "build-client": "cd source/client && npx tsc",
         "build-server": "cd source/server && npx tsc",
-        "serve": "npx nodemon build/index.js",
-        "start": "node build/index.js"
+        "build": "npm run build-server && npm run build-client",
+        "serve": "node build/index.js",
+        "build-client:watch": "cd source/client && npx tsc --watch",
+        "build-server:watch": "cd source/server && npx tsc --watch",
+        "serve:watch": "npx nodemon build/index.js"
     },
     "repository": {
         "type": "git",
