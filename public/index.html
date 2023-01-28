@@ -8,22 +8,29 @@
     <meta name="description" content="Here lives Jeremy.">
 
     <title>Jeremy Bankes</title>
-    <link rel="stylesheet" href="styles/global/global.css">
+
+
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;1,800&display=swap" rel="stylesheet">
+    <!-- /Font -->
+
+
+    <link rel="stylesheet" href="styles/global/global.css">
     <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/main.js" async></script>
+    <script src="scripts/main.js" type="module" async defer></script>
 </head>
 
 <body class="stack alignCenter breathable">
-    <div class="stack card noTextWrap">
-        <h1 class="textColorAccent textAlignCenter">Jeremy Bankes</h1>
+    <canvas id="wallpaperCanvas"></canvas>
+    <div class="stack card noTextWrap borderNone">
+        <h1 class="textColorAccent textAlignCenter">Jeremy A. Bankes</h1>
         <div class="stack alignCenter">
-            <img id="profileImage" src="images/profile.png" alt="Jeremy Bankes" width="200" height="200">
+            <img id="profileImage" src="images/profile.png" alt="Jeremy Bankes" width="200" height="200" class="borderRadiusCircle">
         </div>
         <hr>
-        <i class="textAlignCenter">Computer Programmer</i>
+        <span class="textAlignCenter">Computer Programmer</span>
         <hr>
         <h2>Contact</h2>
         <span>Email Address: <a href="mailto:jeremy.bankes@gmail.com">jeremy.bankes@gmail.com</a></span>

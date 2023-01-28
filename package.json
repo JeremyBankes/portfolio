@@ -27,11 +27,12 @@
         "url": "https://github.com/JeremyBankes/jeremy/issues"
     },
     "homepage": "https://github.com/JeremyBankes/jeremy#readme",
-    "dependencies": {
-        "framework": "file:../framework"
-    },
     "devDependencies": {
         "@types/node": "^18.7.16",
+        "nodemon": "^2.0.20",
         "typescript": "^4.8.2"
+    },
+    "dependencies": {
+        "framework": "file:../framework"
     }
 }
