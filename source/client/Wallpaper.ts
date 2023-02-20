@@ -62,7 +62,7 @@ export class Wallpaper {
             }
             this._context.fillStyle = line.color;
             this._context.beginPath();
-            this._context.roundRect(x, y, lineWidth, line.height - this._spacing * (line.height / this._lineHeight), this._lineHeight / 4);
+            this._context.fillRect(x, y, lineWidth, line.height - this._spacing * (line.height / this._lineHeight));
             this._context.fill();
             y += line.height;
         }
