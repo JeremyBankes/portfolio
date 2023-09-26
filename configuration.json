@@ -1,0 +1,6 @@
+{
+    "production": true,
+    "web": {
+        "port": 80
+    }
+}

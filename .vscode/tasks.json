@@ -2,27 +2,41 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Client",
-            "type": "typescript",
-            "tsconfig": "source/client/tsconfig.json",
-            "problemMatcher": [
-                "$tsc-watch"
-            ],
-            "group": "build"
-        },
-        {
-            "label": "Build Server",
-            "type": "typescript",
-            "tsconfig": "source/server/tsconfig.json",
-            "problemMatcher": [
-                "$tsc-watch"
-            ],
-            "group": "build"
-        },
-        {
-            "label": "Serve",
+            "label": "Serve (Watch)",
             "type": "shell",
-            "command": "nodemon build/index.js"
+            "command": "nodemon --delay 500ms build/backend/index.js",
+            "isBackground": true
+        },
+        {
+            "type": "typescript",
+            "tsconfig": "source/backend/tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "group": "build",
+            "label": "Build Back-end (Watch)",
+            "isBackground": true
+        },
+        {
+            "type": "typescript",
+            "tsconfig": "source/frontend/tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "group": "build",
+            "label": "Build Front-end (Watch)",
+            "isBackground": true
+        },
+        {
+            "type": "shell",
+            "label": "Develop",
+            "dependsOn": [
+                "Build Back-end (Watch)",
+                "Build Front-end (Watch)",
+                "Serve (Watch)"
+            ]
         }
     ]
 }
