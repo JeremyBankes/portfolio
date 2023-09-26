@@ -1,0 +1,54 @@
+:root {
+    --font-family-regular: "Barlow", "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 800;
+}
+
+#wallpaper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#profileImageContainer {
+    position: relative;
+    perspective: 1000px;
+    width: 200px;
+    height: 200px;
+}
+
+#profileImage,
+#profileBackImage {
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+#profileBackImage {
+    transform: rotateY(180deg);
+}
+
+#profileImageContainer:hover #profileImage {
+    transform: rotateY(180deg);
+}
+
+#profileImageContainer:hover #profileBackImage {
+    transform: rotateY(0deg);
+}

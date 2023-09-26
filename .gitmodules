@@ -1,3 +1,3 @@
-[submodule "public/styles/global"]
-	path = public/styles/global
-	url = https://github.com/jeremybankes/global
+[submodule "styles/lux"]
+	path = styles/lux
+	url = https://github.com/lucania-software/lux.git
