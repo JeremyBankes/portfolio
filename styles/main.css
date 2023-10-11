@@ -1,6 +1,6 @@
 :root {
     --font-family-regular: "Barlow", "Segoe UI", sans-serif;
-    --accent-color: #90a8c7;
+    --accent-color: #5be9d3;
 }
 
 h1,
@@ -14,7 +14,7 @@ h6 {
     font-weight: 800;
 }
 
-#wallpaper {
+#background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -52,4 +52,37 @@ h6 {
 
 #profileImageContainer:hover #profileBackImage {
     transform: rotateY(0deg);
+}
+
+.titleContainer {
+    position: relative;
+}
+
+.keyboardContainer {
+    position: absolute;
+    right: 0;
+}
+
+.keyboard {
+    position: relative;
+}
+
+.keyboard:hover .scorecard {
+    opacity: 1;
+}
+
+.keyboard .scorecard {
+    pointer-events: none;
+    background-color: #4A96CE;
+    padding: var(--space-smaller);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transition: opacity 300ms ease-out;
+    border-radius: var(--border-radius);
+    opacity: 0;
+}
+
+.keyboard img {
+    border-radius: var(--border-radius);
 }
