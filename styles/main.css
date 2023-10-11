@@ -1,6 +1,11 @@
 :root {
     --font-family-regular: "Barlow", "Segoe UI", sans-serif;
     --accent-color: #5be9d3;
+    --accent-color-special: #a7eee3;
+}
+
+* {
+    user-select: none;
 }
 
 h1,

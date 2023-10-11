@@ -51,8 +51,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("background");
     const canvasBounds = canvas.getBoundingClientRect();
     window.addEventListener("mousemove", (event) => {
-        cursorPosition.x = (event.clientX - canvasBounds.left) / canvasBounds.width;
-        cursorPosition.y = 1.0 - (event.clientY - canvasBounds.top) / canvasBounds.height;
+        const targetX = (event.clientX - canvasBounds.left) / canvasBounds.width;
+        const targetY = 1.0 - (event.clientY - canvasBounds.top) / canvasBounds.height;
+        cursorPosition.x = cursorPosition.x + (targetX - cursorPosition.x) / 16;
+        cursorPosition.y = cursorPosition.y + (targetY - cursorPosition.y) / 16;
     });
     const graphics = canvas.getContext("webgl");
     if (graphics === null) {
