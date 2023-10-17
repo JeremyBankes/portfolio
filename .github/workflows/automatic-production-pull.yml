@@ -5,4 +5,10 @@ jobs:
   production-pull:
     runs-on: ubuntu-latest
     steps:
-      - run: ssh git@jeremybankes.com "cd /var/www/default && git pull"
+      - name: Pull Remote Code
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: cd /var/www/default && git pull
