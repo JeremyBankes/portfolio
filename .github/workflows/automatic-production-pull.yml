@@ -1,0 +1,8 @@
+name: Automatic Production Pull
+run-name: ${{ github.actor }} pushed to production.
+on: [push]
+jobs:
+  production-pull:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ssh git@jeremybankes.com "cd /var/www/default && git pull"
