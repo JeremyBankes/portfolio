@@ -3,6 +3,7 @@
     --font-family-regular: "Barlow", "Segoe UI", sans-serif;
     --accent-color: #00aec3;
     --accent-color-special: #00e5ff;
+    --hover-transition-duration: 400ms;
 }
 
 * {
@@ -41,7 +42,7 @@ h6 {
 #profileBackImage {
     position: absolute;
     transform-style: preserve-3d;
-    transition: transform 0.8s;
+    transition: transform var(--hover-transition-duration);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     width: 100%;
@@ -79,6 +80,14 @@ h6 {
     z-index: 10;
 }
 
+.icon path {
+    transition: fill var(--hover-transition-duration) ease-out;
+}
+
+.icon:hover path {
+    fill: var(--accent-color-special);
+}
+
 .icon .tooltip {
     pointer-events: none;
     background-color: var(--background-color-special);
@@ -86,7 +95,7 @@ h6 {
     position: absolute;
     top: 100%;
     right: 0;
-    transition: opacity 500ms ease-out;
+    transition: opacity var(--hover-transition-duration) ease-out;
     border-radius: var(--border-radius);
     opacity: 0;
 }
