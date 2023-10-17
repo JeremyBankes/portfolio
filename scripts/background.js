@@ -47,9 +47,12 @@ async function startRenderer(graphics, cursorPosition, vertexShaderUri, fragment
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    const cursorPosition = { x: 0, y: 0 };
     const canvas = document.getElementById("background");
-    const canvasBounds = canvas.getBoundingClientRect();
+    let canvasBounds = canvas.getBoundingClientRect();
+    const cursorPosition = { x: 0.5, y: 0.5 };
+    window.addEventListener("resize", () => {
+        canvasBounds = canvas.getBoundingClientRect();
+    });
     window.addEventListener("mousemove", (event) => {
         const targetX = (event.clientX - canvasBounds.left) / canvasBounds.width;
         const targetY = 1.0 - (event.clientY - canvasBounds.top) / canvasBounds.height;

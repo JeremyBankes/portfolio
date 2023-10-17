@@ -1,8 +1,8 @@
 :root {
     --background-color: #1a1a1a80;
     --font-family-regular: "Barlow", "Segoe UI", sans-serif;
-    --accent-color: #5be9d3;
-    --accent-color-special: #a7eee3;
+    --accent-color: #00aec3;
+    --accent-color-special: #00e5ff;
 }
 
 * {
@@ -64,31 +64,71 @@ h6 {
     position: relative;
 }
 
-.keyboardContainer {
+.iconContainer {
     position: absolute;
     right: 0;
+    bottom: 0;
 }
 
-.keyboard {
+.icon {
     position: relative;
 }
 
-.keyboard:hover .scorecard {
+.icon:hover .tooltip {
     opacity: 1;
+    z-index: 10;
 }
 
-.keyboard .scorecard {
+.icon .tooltip {
     pointer-events: none;
-    background-color: #4A96CE;
+    background-color: var(--background-color-special);
     padding: var(--space-smaller);
     position: absolute;
     top: 100%;
     right: 0;
-    transition: opacity 300ms ease-out;
+    transition: opacity 500ms ease-out;
     border-radius: var(--border-radius);
     opacity: 0;
 }
 
 .keyboard img {
     border-radius: var(--border-radius);
+}
+
+.heart {
+    display: inline-block;
+    transition: color 500ms ease-out;
+    animation-name: heart;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.heart:hover {
+    color: #900000;
+    transform: scale(1.15);
+    animation-play-state: running;
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(1.0);
+    }
+
+    40% {
+        transform: scale(1.25);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    60% {
+        transform: scale(1.35);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
 }
