@@ -91,16 +91,14 @@ h6 {
 .icon .tooltip {
     pointer-events: none;
     background-color: var(--background-color-special);
-    padding: var(--space-smaller);
     position: absolute;
     top: 100%;
     right: 0;
     transition: opacity var(--hover-transition-duration) ease-out;
-    border-radius: var(--border-radius);
     opacity: 0;
 }
 
-.keyboard img {
+.tooltip img {
     border-radius: var(--border-radius);
 }
 
