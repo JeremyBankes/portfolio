@@ -38,12 +38,12 @@ h6 {
 #mainCard {
     opacity: 0;
     transition: transform 1000ms ease-out, opacity 750ms ease-out;
-    transform: skewX(-10deg) rotateY(90deg);
+    transform: skewX(15deg) rotateZ(25deg) rotateY(90deg) translateY(4rem);
 }
 
 #mainCard.visible {
     opacity: 1;
-    transform: skewX(0) rotateY(0);
+    transform: skewX(0) rotateZ(0) rotateY(0) translateY(0);
 }
 
 #profileImageContainer {
