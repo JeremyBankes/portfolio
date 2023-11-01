@@ -10,6 +10,10 @@
     user-select: none;
 }
 
+body {
+    overflow: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -29,6 +33,17 @@ h6 {
     top: 0;
     left: 0;
     overflow: hidden;
+}
+
+#mainCard {
+    opacity: 0;
+    transition: transform 1000ms ease-out, opacity 750ms ease-out;
+    transform: skewX(-10deg) rotateY(90deg);
+}
+
+#mainCard.visible {
+    opacity: 1;
+    transform: skewX(0) rotateY(0);
 }
 
 #profileImageContainer {
