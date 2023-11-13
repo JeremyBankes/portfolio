@@ -1,8 +1,8 @@
 :root {
     --background-color: #1a1a1a80;
     --font-family-regular: "Barlow", "Segoe UI", sans-serif;
-    --accent-color: #00aec3;
-    --accent-color-special: #00e5ff;
+    --accent-color: #99c9a5;
+    --accent-color-special: #649b6e;
     --hover-transition-duration: 400ms;
 }
 
@@ -96,6 +96,7 @@ h6 {
 }
 
 .icon path {
+    fill: var(--accent-color);
     transition: fill var(--hover-transition-duration) ease-out;
 }
 

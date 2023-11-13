@@ -10,6 +10,20 @@ async function createShader(graphics, type, sourceUri) {
     return shader;
 }
 
+function parseColor(input) {
+    if (input.startsWith("#")) {
+        const colorSubstring = input.substring(1);
+        const length = colorSubstring.length / 3;
+        const factor = [17, 1, 0.062272][length - 1];
+        const red = Math.round(parseInt(colorSubstring.substring(0, length), 16) * factor);
+        const green = Math.round(parseInt(colorSubstring.substring(length, 2 * length), 16) * factor);
+        const blue = Math.round(parseInt(colorSubstring.substring(2 * length, 3 * length), 16) * factor);
+        return [red, green, blue];
+    } else {
+        return input.split("(")[1].split(")")[0].split(",").map(parseFloat);
+    }
+}
+
 async function startRenderer(graphics, cursorPosition, vertexShaderUri, fragmentShaderUri) {
     const shaderProgram = graphics.createProgram();
 
@@ -32,6 +46,11 @@ async function startRenderer(graphics, cursorPosition, vertexShaderUri, fragment
     graphics.bufferData(graphics.ARRAY_BUFFER, new Float32Array(vertices), graphics.STATIC_DRAW);
     const timeUniformLocation = graphics.getUniformLocation(shaderProgram, "time");
     const cursorPositionUniformLocation = graphics.getUniformLocation(shaderProgram, "cursorPosition");
+    const accentColorUniformLocation = graphics.getUniformLocation(shaderProgram, "accentColor");
+
+    const cssAccentColor = getComputedStyle(document.documentElement).getPropertyValue("--accent-color-special");
+    const accentColor = parseColor(cssAccentColor);
+    const accentColorUniform = accentColor.map((component) => component / 255);
 
     const start = performance.now();
     const update = (time) => {
@@ -39,6 +58,7 @@ async function startRenderer(graphics, cursorPosition, vertexShaderUri, fragment
         graphics.useProgram(shaderProgram);
         graphics.uniform1f(timeUniformLocation, (time - start) / 1000);
         graphics.uniform2f(cursorPositionUniformLocation, cursorPosition.x, cursorPosition.y);
+        graphics.uniform3f(accentColorUniformLocation, ...accentColorUniform);
         graphics.drawArrays(graphics.TRIANGLES, 0, 6);
         window.requestAnimationFrame(update);
     };
