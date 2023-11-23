@@ -1,9 +1,10 @@
 :root {
     --background-color: #1a1a1a80;
-    --font-family-regular: "Barlow", "Segoe UI", sans-serif;
+    --font-family-regular: "Roboto", "Segoe UI", sans-serif;
+    --font-family-heading: "Barlow", "Segoe UI", sans-serif;
     --accent-color: #99c9a5;
     --accent-color-special: #649b6e;
-    --hover-transition-duration: 400ms;
+    --hover-transition-duration: 300ms;
 }
 
 * {
@@ -108,7 +109,7 @@ h6 {
     pointer-events: none;
     background-color: var(--background-color-special);
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     right: 0;
     transition: opacity var(--hover-transition-duration) ease-out;
     opacity: 0;
