@@ -78,6 +78,14 @@ h6 {
     right: var(--space-small);
 }
 
+@media (max-width: 600px) {
+    
+    #wallpaperIcon {
+        display: none;
+    }
+
+}
+
 .titleContainer {
     position: relative;
 }
