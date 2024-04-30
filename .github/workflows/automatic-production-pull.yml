@@ -11,4 +11,4 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          script: cd /var/www/default && git pull
+          script: cd /var/www/default && git pull --recurse-submodules
