@@ -1,9 +1,9 @@
 :root {
-    --background-color: #1a1a1a80;
-    --font-family-regular: "Roboto", "Segoe UI", sans-serif;
-    --font-family-heading: "Barlow", "Segoe UI", sans-serif;
-    --accent-color: #99c9a5;
-    --accent-color-special: #649b6e;
+    --color-page: #1a1a1a80;
+    --font-family-regular: "Work Sans", "Segoe UI", sans-serif;
+    --font-family-heading: "Work Sans", "Segoe UI", sans-serif;
+    --color-accent: #dddddd;
+    --color-accent-special: #ffffff;
     --hover-transition-duration: 300ms;
 }
 
@@ -18,7 +18,6 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-style: italic;
     font-weight: 800;
 }
 
@@ -35,6 +34,7 @@ h6 {
     opacity: 0;
     transition: transform 1000ms ease-out, opacity 750ms ease-out;
     transform: skewX(15deg) rotateZ(25deg) rotateY(90deg) translateY(4rem);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.60) 35%, rgba(0, 0, 0, 0.40) 100%);
 }
 
 #mainCard.visible {
@@ -72,6 +72,12 @@ h6 {
     transform: rotateY(0deg);
 }
 
+#wallpaperIcon {
+    position: absolute;
+    bottom: var(--space-small);
+    right: var(--space-small);
+}
+
 .titleContainer {
     position: relative;
 }
@@ -86,29 +92,37 @@ h6 {
     position: relative;
 }
 
+.icon svg {
+    animation-name: shake;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
 .icon:hover .tooltip {
     opacity: 1;
     z-index: 10;
 }
 
 .icon path {
-    fill: var(--accent-color);
+    fill: var(--color-accent);
     transition: fill var(--hover-transition-duration) ease-out;
 }
 
 .icon:hover path {
-    fill: var(--accent-color-special);
+    fill: var(--color-accent-special);
 }
 
 .icon .tooltip {
     pointer-events: none;
-    background-color: var(--background-color-special);
+    background-color: var(--color-page-special);
     position: absolute;
     bottom: 100%;
     right: 0;
-    max-width: 80vw;
     transition: opacity var(--hover-transition-duration) ease-out;
     opacity: 0;
+    overflow: hidden;
 }
 
 .tooltip img {
@@ -129,6 +143,28 @@ h6 {
     color: #900000;
     transform: scale(1.15);
     animation-play-state: running;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotateZ(0);
+    }
+
+    90% {
+        transform: rotateZ(0);
+    }
+
+    92.5% {
+        transform: rotateZ(20deg);
+    }
+
+    97.5% {
+        transform: rotateZ(-20deg);
+    }
+
+    100% {
+        transform: rotateZ(0);
+    }
 }
 
 @keyframes heart {

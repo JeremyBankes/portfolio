@@ -48,7 +48,7 @@ async function startRenderer(graphics, cursorPosition, vertexShaderUri, fragment
     const cursorPositionUniformLocation = graphics.getUniformLocation(shaderProgram, "cursorPosition");
     const accentColorUniformLocation = graphics.getUniformLocation(shaderProgram, "accentColor");
 
-    const cssAccentColor = getComputedStyle(document.documentElement).getPropertyValue("--accent-color-special");
+    const cssAccentColor = getComputedStyle(document.documentElement).getPropertyValue("--color-accent-special");
     const accentColor = parseColor(cssAccentColor);
     const accentColorUniform = accentColor.map((component) => component / 255);
 
