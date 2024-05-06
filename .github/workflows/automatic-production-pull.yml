@@ -8,7 +8,8 @@ jobs:
       - name: Pull Remote Code
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
+          host: ${{ env.HOST }}
+          port: ${{ env.PORT }}
+          username: ${{ env.USERNAME }}
           key: ${{ secrets.KEY }}
           script: cd /var/www/default && git pull --recurse-submodules
