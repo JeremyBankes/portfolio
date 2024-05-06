@@ -30,13 +30,16 @@
         gtag('config', 'G-1EDHEEKY9B');
     </script>
     <script>
-        addEventListener("DOMContentLoaded", () => document.getElementById("mainCard").classList.add("visible"));
+        addEventListener("DOMContentLoaded", () => {
+            const mainCard = document.getElementById("mainCard");
+            mainCard.classList.add("visible");
+        });
     </script>
 </head>
 
 <body class="stack justify-center align-center breathable">
     <canvas id="background"></canvas>
-    <div id="mainCard" class="stack card">
+    <div id="mainCard" class="stack card maximum-width-medium">
         <div class="stack breathable">
             <div class="stack no-gap align-center">
                 <h1 class="foreground-color-accent">Jeremy Bankes</h1>
@@ -97,28 +100,34 @@
                     </div>
                 </div>
             </div>
-            <div class="row align-stretch">
-                <div class="column stack card">
-                    <h2>Social Media</h2>
-                    <div class="stack no-gap no-text-wrap">
-                        <div class="rack align-center">
-                            <span>Facebook</span>
-                            <hr class="weight-smaller">
-                            <a href="https://www.facebook.com/jeremyabankes/" target="_blank" rel="noopener noreferrer">
-                                jeremyabankes
-                            </a>
-                        </div>
-                        <div class="rack align-center">
-                            <span>Discord</span>
-                            <hr class="weight-smaller">
-                            <a href="https://discord.com/channels/@me" target="_blank"
-                                rel="noopener noreferrer">Jeremy#5391</a>
-                        </div>
-                        <div class="rack align-center">
-                            <span>LinkedIn</span>
-                            <hr class="weight-smaller">
-                            <a href="https://www.linkedin.com/in/jeremybankes/" target="_blank">jeremybankes</a>
-                        </div>
+            <div class="stack card">
+                <p>
+                    I'm a meticulous software developer always excited to put my love for programming towards something
+                    awesome. I have 10 enthusiastic years of software development behind me, where I've spent my time
+                    developing interesting projects such as 3D renderers, browser extensions, compilers, web-based
+                    management portals and an assortment of fun algorithms.
+                </p>
+            </div>
+            <div class="stack card">
+                <h2>Social Media</h2>
+                <div class="stack no-gap no-text-wrap">
+                    <div class="rack align-center">
+                        <span>Facebook</span>
+                        <hr class="weight-smaller">
+                        <a href="https://www.facebook.com/jeremyabankes/" target="_blank" rel="noopener noreferrer">
+                            jeremyabankes
+                        </a>
+                    </div>
+                    <div class="rack align-center">
+                        <span>Discord</span>
+                        <hr class="weight-smaller">
+                        <a href="https://discord.com/channels/@me" target="_blank"
+                            rel="noopener noreferrer">Jeremy#5391</a>
+                    </div>
+                    <div class="rack align-center">
+                        <span>LinkedIn</span>
+                        <hr class="weight-smaller">
+                        <a href="https://www.linkedin.com/in/jeremybankes/" target="_blank">jeremybankes</a>
                     </div>
                 </div>
             </div>
