@@ -4,8 +4,9 @@ async function createShader(graphics, type, sourceUri) {
     graphics.shaderSource(shader, sourceCode);
     graphics.compileShader(shader);
     if (!graphics.getShaderParameter(shader, graphics.COMPILE_STATUS)) {
+        const message = graphics.getShaderInfoLog(shader);
         graphics.deleteShader(shader);
-        throw new Error(`Failed to compile shader! ${graphics.getShaderInfoLog(shader)}`);
+        throw new Error(`Failed to compile shader! ${message}`);
     }
     return shader;
 }
@@ -70,19 +71,26 @@ window.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("background");
     let canvasBounds = canvas.getBoundingClientRect();
     const cursorPosition = { x: 0.5, y: 0.5 };
-    window.addEventListener("resize", () => {
-        canvasBounds = canvas.getBoundingClientRect();
-    });
-    window.addEventListener("mousemove", (event) => {
-        const targetX = (event.clientX - canvasBounds.left) / canvasBounds.width;
-        const targetY = 1.0 - (event.clientY - canvasBounds.top) / canvasBounds.height;
-        cursorPosition.x = cursorPosition.x + (targetX - cursorPosition.x) / 16;
-        cursorPosition.y = cursorPosition.y + (targetY - cursorPosition.y) / 16;
-    });
+
     const graphics = canvas.getContext("webgl");
     if (graphics === null) {
         console.warn("Your browser does not appear to support WebGL!");
     } else {
         startRenderer(graphics, cursorPosition, "/shaders/background.vertex", "/shaders/background.fragment");
     }
+
+    const updateCanvasBounds = () => {
+        canvasBounds = canvas.getBoundingClientRect();
+        canvas.width = canvasBounds.width;
+        canvas.height = canvasBounds.height;
+        graphics.viewport(0, 0, canvas.width, canvas.height);
+    };
+
+    window.addEventListener("resize", updateCanvasBounds);
+    window.addEventListener("mousemove", (event) => {
+        cursorPosition.x = (event.clientX - canvasBounds.left) / canvasBounds.width;
+        cursorPosition.y = 1.0 - (event.clientY - canvasBounds.top) / canvasBounds.height;
+    });
+
+    updateCanvasBounds();
 });
