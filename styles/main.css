@@ -98,6 +98,12 @@ h6 {
 
 }
 
+.backgroundAnimation {
+    background: linear-gradient(45deg, #000000, #222222, #101010);
+    background-size: 300% 300%;
+    animation: backgroundVariance 5s ease infinite;
+}
+
 .titleContainer {
     position: relative;
 }
@@ -165,6 +171,20 @@ h6 {
     color: #900000;
     transform: scale(1.15);
     animation-play-state: running;
+}
+
+@keyframes backgroundVariance {
+    0% {
+        background-position: 10% 0%;
+    }
+
+    50% {
+        background-position: 91% 100%;
+    }
+
+    100% {
+        background-position: 10% 0%;
+    }
 }
 
 @keyframes shake {

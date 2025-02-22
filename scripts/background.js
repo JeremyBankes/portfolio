@@ -67,30 +67,55 @@ async function startRenderer(graphics, cursorPosition, vertexShaderUri, fragment
     window.requestAnimationFrame(update);
 }
 
+function isMobileUserAgent() {
+    const mobileUserAgentExpressions = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+    return mobileUserAgentExpressions.some((expression) => navigator.userAgent.match(expression));
+}
+
+
 window.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("background");
-    let canvasBounds = canvas.getBoundingClientRect();
-    const cursorPosition = { x: 0.5, y: 0.5 };
-
-    const graphics = canvas.getContext("webgl");
-    if (graphics === null) {
-        console.warn("Your browser does not appear to support WebGL!");
+    if (isMobileUserAgent()) {
+        console.warn("Skipping rendering background on mobile.");
+        canvas.classList.add("backgroundAnimation");
     } else {
-        startRenderer(graphics, cursorPosition, "/shaders/background.vertex", "/shaders/background.fragment");
+        let canvasBounds = canvas.getBoundingClientRect();
+        const cursorPosition = { x: 0.5, y: 0.5 };
+
+        const context = canvas.getContext("webgl");
+        if (context === null) {
+            console.warn("Your browser does not appear to support WebGL!");
+        } else {
+            startRenderer(context, cursorPosition, "/shaders/background.vertex", "/shaders/background.fragment");
+        }
+
+        const resizeObserver = new ResizeObserver(([entry]) => {
+            let width, height;
+            if (entry.devicePixelContentBoxSize === undefined) {
+                [{ inlineSize: width, blockSize: height }] = entry.contentBoxSize;
+                width *= window.devicePixelRatio;
+                height *= window.devicePixelRatio;
+            } else {
+                [{ inlineSize: width, blockSize: height }] = entry.devicePixelContentBoxSize;
+            }
+            canvas.width = width;
+            canvas.height = height;
+            context.viewport(0, 0, width, height);
+        });
+
+        window.addEventListener("mousemove", (event) => {
+            cursorPosition.x = (event.clientX - canvasBounds.left) / canvasBounds.width;
+            cursorPosition.y = 1.0 - (event.clientY - canvasBounds.top) / canvasBounds.height;
+        });
+
+        resizeObserver.observe(canvas);
     }
-
-    const updateCanvasBounds = () => {
-        canvasBounds = canvas.getBoundingClientRect();
-        canvas.width = canvasBounds.width;
-        canvas.height = canvasBounds.height;
-        graphics.viewport(0, 0, canvas.width, canvas.height);
-    };
-
-    window.addEventListener("resize", updateCanvasBounds);
-    window.addEventListener("mousemove", (event) => {
-        cursorPosition.x = (event.clientX - canvasBounds.left) / canvasBounds.width;
-        cursorPosition.y = 1.0 - (event.clientY - canvasBounds.top) / canvasBounds.height;
-    });
-
-    updateCanvasBounds();
 });
