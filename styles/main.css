@@ -1,10 +1,12 @@
 :root {
-    --color-page: #1a1a1a80;
+    --color-page: #FFFFFF06;
     --font-family-heading: "BrandonGrotesqueBold", sans-serif;
     --font-family-regular: "VarelaRoundRegular", sans-serif;
     --color-accent: #dddddd;
     --color-accent-special: #ffffff;
     --hover-transition-duration: 300ms;
+    --border: none;
+    --color-border: #FFFFFF10;
 }
 
 @font-face {
@@ -44,7 +46,7 @@ h6 {
     opacity: 0;
     transition: transform 2000ms ease-out, opacity 1500ms ease-out;
     transform: scale(0.5) skewX(15deg) rotateZ(25deg) rotateY(90deg) translateY(25vh);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.60) 35%, rgba(0, 0, 0, 0.40) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 35%, rgba(0, 0, 0, 0.1) 100%);
 }
 
 #mainCard.visible {
@@ -108,6 +110,7 @@ h6 {
 
 .icon {
     position: relative;
+    cursor: help;
 }
 
 .icon svg {
@@ -141,6 +144,7 @@ h6 {
     transition: opacity var(--hover-transition-duration) ease-out;
     opacity: 0;
     overflow: hidden;
+    max-width: 80vw;
 }
 
 .tooltip img {
