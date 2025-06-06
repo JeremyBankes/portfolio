@@ -42,18 +42,6 @@ h6 {
     left: 0;
 }
 
-#mainCard {
-    opacity: 0;
-    transition: transform 2000ms ease-out, opacity 1500ms ease-out;
-    transform: scale(0.5) skewX(15deg) rotateZ(25deg) rotateY(90deg) translateY(25vh);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 35%, rgba(0, 0, 0, 0.1) 100%);
-}
-
-#mainCard.visible {
-    opacity: 1;
-    transform: scale(1) skewX(0) rotateZ(0) rotateY(0) translateY(0);
-}
-
 #profileImageContainer {
     position: relative;
     perspective: 1000px;
@@ -99,13 +87,19 @@ h6 {
 }
 
 .backgroundAnimation {
-    background: linear-gradient(45deg, #000000, #222222, #101010);
+    background: linear-gradient(45deg, #000000, #303035, #000010);
     background-size: 300% 300%;
     animation: backgroundVariance 5s ease infinite;
 }
 
 .titleContainer {
     position: relative;
+}
+
+.locationContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 .iconContainer {
@@ -116,7 +110,6 @@ h6 {
 
 .icon {
     position: relative;
-    cursor: help;
 }
 
 .icon svg {
@@ -151,6 +144,11 @@ h6 {
     opacity: 0;
     overflow: hidden;
     max-width: 80vw;
+}
+
+.icon .tooltip.left {
+    right: auto;
+    left: 0;
 }
 
 .tooltip img {
