@@ -38,44 +38,111 @@
     <canvas id="background"></canvas>
     <div id="mainCard" class="stack card maximum-width-medium weight-smaller">
         <div class="stack breathable weight-smaller">
-            <div class="stack no-gap align-center">
+            <div class="rack align-center">
                 <h1>Jeremy Bankes</h1>
-            </div>
-            <div class="stack align-center">
-                <div id="profileImageContainer" class="border-radius-circle">
-                    <img id="profileImage" src="images/profile2.webp" alt="Jeremy Bankes" class="border-radius-circle">
-                    <img id="profileBackImage" src="images/profile1.webp" alt="Jeremy Bankes"
-                        class="border-radius-circle">
-                </div>
-            </div>
-            <div class="stack no-gap titleContainer">
-                <span class="text-align-center">Software Developer</span>
-                <span class="font-size-smaller text-align-center">at
-                    <a href="https://umaritime.com/" target="_blank" rel="noopener noreferrer">Ultra Maritime</a>
-                </span>
-                <div class="locationContainer hidden-under-medium-width">
+                <div class="weight-smaller"></div>
+                <div class="text-align-end">
                     <a href="https://maps.app.goo.gl/a8emr8HqyCYsjYTm6" class="stack no-gap font-size-smaller"
                         target="_blank">
                         <span>Nova Scotia</span>
                         <div class="rack align-center">
-                            <span>Canada</span>
                             <img src="https://flagsapi.com/CA/shiny/32.png" width="16" height="16" style="width: auto;">
+                            <span>Canada</span>
                         </div>
                     </a>
                 </div>
-                <div class="locationContainer hidden-over-medium-width">
-                    <div class="icon">
-                        <img src="https://flagsapi.com/CA/shiny/32.png" width="32" height="32" style="width: auto;">
+            </div>
+            <div class="stack height-none vertical-overflow-auto weight-smaller no-scroll-under-medium-width">
+                <div>
+                    <div class="stack" style="float:left;padding: 0 var(--space-large) 0 0;">
+                        <div class="stack no-gap">
+                            <span>Software Developer</span>
+                            <span class="font-size-smaller">at
+                                <a href="https://umaritime.com/" target="_blank" rel="noopener noreferrer">Ultra
+                                    Maritime</a>
+                            </span>
+                        </div>
+                        <div id="profileImageContainer">
+                            <img id="profileImage" src="images/profile1.webp" alt="Jeremy Bankes" class="border-radius">
+                            <img id="profileBackImage" src="images/profile2.webp" alt="Jeremy Bankes"
+                                class="border-radius">
+                        </div>
                     </div>
-                    <!-- <div class="tooltip breathable card stack no-gap">
-                        <span class="no-text-wrap">Nova Scotia</span>
-                        <span>Canada</span>
-                    </div> -->
+                    <p style="padding-bottom: var(--space-small);">
+                        I bring direction and technical knowledge to the teams I work with. I've repeatedly
+                        been the go-to person to implement environments where good software practices aren't just
+                        encouraged but enforced through IDE tooling and CI/CD. I'm an advocate for solid documentation
+                        and have created templates and tooling to lower the barrier for teams to create software that
+                        doesn't just solve a problem now, but can live on for developers in the future.
+                    </p>
+                    <p style="padding-bottom: var(--space-small);">
+                        I write principled code that plays the balancing game between development time, runtime
+                        efficiency, and maintainability. I make a good detective, and get a lot of satisfaction from
+                        understanding systems and resolving deeply technical bugs.
+                    </p>
+                    <p>
+                        I led the software team for a parcel delivery company for 4 years and now work as a senior
+                        developer for an underwater sonar systems manufacturer; a fascinating domain where software
+                        meets physics.
+                    </p>
                 </div>
-                <div class="iconContainer">
-                    <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                        onmouseleave="showTooltip(event, 'mainBody')">
-                        <div class="tooltip hidden breathable card rack align-center">
+                <div class="row">
+                    <div class="column stack card">
+                        <h2>Social Media</h2>
+                        <div class="stack no-gap">
+                            <div class="rack align-center">
+                                <span style="flex-basis: 1;">LinkedIn</span>
+                                <hr class="weight-smaller" style="flex-basis: 0;">
+                                <a href="https://www.linkedin.com/in/jeremybankes/" target="_blank"
+                                    class="rack justify-center">
+                                    jeremybankes
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1rem" viewBox="0 0 448 512">
+                                            <path
+                                                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="rack align-center">
+                                <span style="flex-basis: 1;">Facebook</span>
+                                <hr class="weight-smaller" style="flex-basis: 0;">
+                                <a href="https://www.facebook.com/jeremyabankes/" target="_blank"
+                                    rel="noopener noreferrer" class="rack justify-center">
+                                    jeremyabankes
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1rem" viewBox="0 0 448 512">
+                                            <path
+                                                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z" />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="rack align-center">
+                                <span style="flex-basis: 1;">Instagram</span>
+                                <hr class="weight-smaller" style="flex-basis: 0;">
+                                <a href="https://www.instagram.com/jeremy.bankes/" target="_blank"
+                                    rel="noopener noreferrer" class="rack justify-center">
+                                    jeremy.bankes
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1rem" viewBox="0 0 448 512">
+                                            <path
+                                                d="M194.4 211.7a53.3 53.3 0 1 0 59.3 88.7 53.3 53.3 0 1 0 -59.3-88.7zm142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12c-18.1-7.1-57.6-6.8-83.1-6.5c-4.1 0-7.9 .1-11.2 .1c-3.3 0-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5c-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2c0 4.1 .1 7.9 .1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2c2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5c4.1 0 7.9-.1 11.2-.1c3.3 0 7.2 0 11.4 .1c25.5 .3 64.8 .7 82.9-6.5c6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83c0-4.2-.1-8.1-.1-11.4s0-7.1 .1-11.4c.3-25.5 .7-64.9-6.5-83l0 0c-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5A82 82 0 1 1 178.4 324.2a82 82 0 1 1 91.1-136.4zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1s2.6-7.1 5.2-9.8s6.1-4.5 9.8-5.2s7.6-.4 11.1 1.1s6.5 3.9 8.6 7s3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2s-3.9 3.2-6.2 4.2s-4.8 1.5-7.3 1.5l0 0c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM357 389c-18.7 18.7-41.4 24.6-67 25.9c-26.4 1.5-105.6 1.5-132 0c-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132c1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0c25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9c-1.3 25.6-7.1 48.3-25.8 67z" />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column stack card">
+                        <div class="card rack align-center">
+                            <span style="flex-basis: 1;">Email Address</span>
+                            <hr class="weight-smaller" style="flex-basis: 0;">
+                            <a href="mailto:mail@jeremybankes.com" target="_blank">mail@jeremybankes.com</a>
+                        </div>
+                        <a class="breathable card rack align-center"
+                            href="https://docs.google.com/document/u/0/export?format=pdf&id=1MsFkcQnmi08Wjov05XJmGoT9L7TBmokYB9ybh-9CjDY"
+                            rel="noopener noreferrer">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1rem" viewBox="0 0 512 512">
                                     <path
@@ -83,105 +150,8 @@
                                 </svg>
                             </div>
                             <span class="fontWeightLarge">Download Resume</span>
-                        </div>
-                        <a href="https://docs.google.com/document/u/0/export?format=pdf&id=1MsFkcQnmi08Wjov05XJmGoT9L7TBmokYB9ybh-9CjDY"
-                            rel="noopener noreferrer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem"
-                                viewBox="0 0 384 512">
-                                <path
-                                    d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z" />
-                            </svg>
                         </a>
                     </div>
-                    <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                        onmouseleave="showTooltip(event, 'mainBody')">
-                        <div class="tooltip hidden border">
-                            <img src="https://data.typeracer.com/misc/badge?user=orcane"
-                                alt="Jeremy's TypeRacer Scorecard" width="120" height="240" style="width: auto;" />
-                        </div>
-                        <a href="https://data.typeracer.com/pit/profile?user=orcane" target="_blank"
-                            rel="noopener noreferrer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem"
-                                viewBox="0 0 576 512">
-                                <path
-                                    d="M64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm16 64h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V144c0-8.8 7.2-16 16-16zM64 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V240zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm80-176c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V144zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V240c0-8.8 7.2-16 16-16zM160 336c0-8.8 7.2-16 16-16H400c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V336zM272 128h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V144c0-8.8 7.2-16 16-16zM256 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V240zM368 128h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H368c-8.8 0-16-7.2-16-16V144c0-8.8 7.2-16 16-16zM352 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H368c-8.8 0-16-7.2-16-16V240zM464 128h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H464c-8.8 0-16-7.2-16-16V144c0-8.8 7.2-16 16-16zM448 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H464c-8.8 0-16-7.2-16-16V240zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H464c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16z" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                        onmouseleave="showTooltip(event, 'mainBody')">
-                        <div class="tooltip hidden card maximum-width-smaller">
-                            This site is written from scratch with no third-party dependencies being served by my
-                            own hardware!
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 512 512">
-                            <path
-                                d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64c-35.3 0-64 28.7-64 64H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64c0 35.3 28.7 64 64 64v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448c35.3 0 64-28.7 64-64h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V280h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V176h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448c0-35.3-28.7-64-64-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H280V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H176V24zM160 128H352c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32zm192 32H160V352H352V160z" />
-                        </svg>
-                    </div>
-
-                </div>
-            </div>
-            <div class="stack height-none vertical-overflow-auto weight-smaller no-scroll-under-medium-width card">
-                <div class="stack card">
-                    <p>
-                        I build software across the entire stack, from low-level system drivers to browser extensions. I
-                        strive for lean, high-performance code not for the sake of the metrics, but to ensure the final
-                        product feels immediate, fluid, and effortless to use. There's a certain high in coming up with
-                        clean and simple solutions that make users smile.
-                    </p>
-                </div>
-                <div class="stack card">
-                    <h2>Social Media</h2>
-                    <div class="stack no-gap">
-                        <div class="rack align-center">
-                            <span style="flex-basis: 1;">LinkedIn</span>
-                            <hr class="weight-smaller" style="flex-basis: 0;">
-                            <a href="https://www.linkedin.com/in/jeremybankes/" target="_blank"
-                                class="rack justify-center">
-                                jeremybankes
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1rem" viewBox="0 0 448 512">
-                                        <path
-                                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="rack align-center">
-                            <span style="flex-basis: 1;">Facebook</span>
-                            <hr class="weight-smaller" style="flex-basis: 0;">
-                            <a href="https://www.facebook.com/jeremyabankes/" target="_blank" rel="noopener noreferrer"
-                                class="rack justify-center">
-                                jeremyabankes
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1rem" viewBox="0 0 448 512">
-                                        <path
-                                            d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z" />
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="rack align-center">
-                            <span style="flex-basis: 1;">Instagram</span>
-                            <hr class="weight-smaller" style="flex-basis: 0;">
-                            <a href="https://www.instagram.com/jeremy.bankes/" target="_blank" rel="noopener noreferrer"
-                                class="rack justify-center">
-                                jeremy.bankes
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1rem" viewBox="0 0 448 512">
-                                        <path
-                                            d="M194.4 211.7a53.3 53.3 0 1 0 59.3 88.7 53.3 53.3 0 1 0 -59.3-88.7zm142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12c-18.1-7.1-57.6-6.8-83.1-6.5c-4.1 0-7.9 .1-11.2 .1c-3.3 0-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5c-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2c0 4.1 .1 7.9 .1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2c2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5c4.1 0 7.9-.1 11.2-.1c3.3 0 7.2 0 11.4 .1c25.5 .3 64.8 .7 82.9-6.5c6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83c0-4.2-.1-8.1-.1-11.4s0-7.1 .1-11.4c.3-25.5 .7-64.9-6.5-83l0 0c-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5A82 82 0 1 1 178.4 324.2a82 82 0 1 1 91.1-136.4zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1s2.6-7.1 5.2-9.8s6.1-4.5 9.8-5.2s7.6-.4 11.1 1.1s6.5 3.9 8.6 7s3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2s-3.9 3.2-6.2 4.2s-4.8 1.5-7.3 1.5l0 0c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM357 389c-18.7 18.7-41.4 24.6-67 25.9c-26.4 1.5-105.6 1.5-132 0c-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132c1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0c25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9c-1.3 25.6-7.1 48.3-25.8 67z" />
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card rack align-center">
-                    <span style="flex-basis: 1;">Email Address</span>
-                    <hr class="weight-smaller" style="flex-basis: 0;">
-                    <a href="mailto:mail@jeremybankes.com" target="_blank">mail@jeremybankes.com</a>
                 </div>
                 <div class="row align-stretch">
                     <div class="column weight-small align-flex-end card minimum-width-smaller">
@@ -334,6 +304,7 @@
                                     <ul>
                                         <li>Make</li>
                                         <li>CMake</li>
+                                        <li>Conan</li>
                                         <li>MSBuild</li>
                                     </ul>
                                 </div>
@@ -387,8 +358,9 @@
                                 </svg>
                                 <div class="tooltip hidden card stack">
                                     <ul>
-                                        <li>Windows</li>
-                                        <li>Linux</li>
+                                        <li>Windows 10/11</li>
+                                        <li>Ubuntu 20.04/24.04</li>
+                                        <li>Debian 12/13</li>
                                     </ul>
                                 </div>
                             </div>
@@ -396,7 +368,7 @@
                     </div>
                 </div>
             </div>
-            <div class="rack" id="footer">
+            <div class="rack align-center" id="footer">
                 <span class="font-size-small foreground-color-accent-special text-align-start">
                     Made with <a class="heart font-size-large foreground-color-accent" target="_blank"
                         href="https://github.com/JeremyBankes/portfolio">❤</a> by Jeremy Bankes.
