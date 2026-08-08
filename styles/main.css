@@ -114,6 +114,9 @@ h6 {
 }
 
 .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
 }
 
@@ -125,37 +128,14 @@ h6 {
     animation-play-state: running;
 }
 
-/* .icon:hover .tooltip {
-    opacity: 1;
-    z-index: 10;
-} */
+.icon path {
+    fill: var(--color-accent);
+    transition: fill var(--hover-transition-duration) ease-out;
+}
 
-/* .icon .tooltip {
-    pointer-events: none;
-    background-color: var(--color-page-special);
-    position: fixed;
-    bottom: 100%;
-    right: 0;
-    transition: opacity var(--hover-transition-duration) ease-out;
-    opacity: 0;
-    overflow: hidden;
-    z-index: 100;
-    max-width: 80vw;
-} */
-
-/* .icon .tooltip.left {
-    right: auto;
-    left: 0;
-} */
-
-/* .icon .tooltip.top {
-    top: 100%;
-    bottom: auto;
-} */
-
-/* .tooltip img {
-    border-radius: var(--border-radius);
-} */
+.icon:hover path {
+    fill: var(--color-accent-special);
+}
 
 .tooltip {
     position: fixed;
@@ -169,15 +149,6 @@ h6 {
 
 .tooltip.hidden {
     display: none;
-}
-
-.icon path {
-    fill: var(--color-accent);
-    transition: fill var(--hover-transition-duration) ease-out;
-}
-
-.icon:hover path {
-    fill: var(--color-accent-special);
 }
 
 .heart {
