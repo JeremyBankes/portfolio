@@ -3,8 +3,10 @@
     --color-page-special: #000000CC;
     --font-family-heading: "BrandonGrotesqueBold", sans-serif;
     --font-family-regular: "VarelaRoundRegular", sans-serif;
-    --color-accent: #BBBBBB;
-    --color-accent-special: #ffffff;
+    --color-text: #cccccc;
+    --color-text-special: #ffffff;
+    --color-accent: #a7bdcc;
+    --color-accent-special: #eeeeee;
     --hover-transition-duration: 300ms;
     --border: none;
     --color-border: #ffffff10;
