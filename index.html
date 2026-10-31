@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="styles/main.css?version=3">
 
     <script src="scripts/tooltip.js?version=1"></script>
+    <script src="scripts/modal.js?version=1"></script>
     <script src="scripts/lastUpdate.js?version=1"></script>
     <script src="scripts/background.js?version=2"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EDHEEKY9B"></script>
@@ -36,7 +37,7 @@
 
 <body id="mainBody" class="stack justify-center align-center breathable">
     <canvas id="background"></canvas>
-    <div id="mainCard" class="stack card maximum-width-medium weight-smaller">
+    <div id="mainCard" class="stack card maximum-width-medium">
         <div class="stack breathable weight-smaller">
             <div class="rack align-center">
                 <h1>Jeremy Bankes</h1>
@@ -52,7 +53,7 @@
                     </a>
                 </div>
             </div>
-            <div class="stack height-none vertical-overflow-auto weight-smaller no-scroll-under-medium-width">
+            <div class="stack vertical-overflow-auto weight-smaller no-scroll-under-medium-width">
                 <div>
                     <div class="stack" style="float:left;padding: 0 var(--space-large) 0 0;">
                         <div class="stack no-gap">
@@ -83,7 +84,7 @@
                     </p>
                     <p>
                         I led the software team for a parcel delivery company for 4 years and now work as a senior
-                        developer for an underwater sonar systems manufacturer; a fascinating domain where software
+                        developer for Lockheed Martin on underwater sonar systems; a fascinating domain where software
                         meets physics.
                     </p>
                 </div>
@@ -154,7 +155,7 @@
                     </div>
                 </div>
                 <div class="row align-stretch">
-                    <div class="column stack card minimum-width-smaller">
+                    <div class="column weight-larger stack card minimum-width-smaller">
                         <h2>Projects</h2>
                         <div class="stack no-gap no-text-wrap">
                             <div class="rack align-center">
@@ -168,7 +169,7 @@
                                 <span>GitHub</span>
                                 <hr class="weight-smaller">
                                 <a href="https://github.com/lucania-software" target="_blank" rel="noopener noreferrer">
-                                    Lucania
+                                    Lucania (Company)
                                 </a>
                             </div>
                             <div class="rack align-center">
@@ -188,37 +189,41 @@
                             </div>
                         </div>
                     </div>
-                    <div class="column stack card minimum-width-smaller">
+                    <div class="column weight-large stack card minimum-width-smaller">
                         <h2>Languages</h2>
                         <div class="rack align-center">
                             <span>C++</span>
                             <hr class="weight-smaller">
-                            <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                                onmouseleave="showTooltip(event, 'mainBody')">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                            <div class="icon" onclick="showModal(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
                                     <path
-                                        d="M173.8 5.5c11-7.3 25.4-7.3 36.4 0L228 17.2c6 3.9 13 5.8 20.1 5.4l21.3-1.3c13.2-.8 25.6 6.4 31.5 18.2l9.6 19.1c3.2 6.4 8.4 11.5 14.7 14.7L344.5 83c11.8 5.9 19 18.3 18.2 31.5l-1.3 21.3c-.4 7.1 1.5 14.2 5.4 20.1l11.8 17.8c7.3 11 7.3 25.4 0 36.4L366.8 228c-3.9 6-5.8 13-5.4 20.1l1.3 21.3c.8 13.2-6.4 25.6-18.2 31.5l-19.1 9.6c-6.4 3.2-11.5 8.4-14.7 14.7L301 344.5c-5.9 11.8-18.3 19-31.5 18.2l-21.3-1.3c-7.1-.4-14.2 1.5-20.1 5.4l-17.8 11.8c-11 7.3-25.4 7.3-36.4 0L156 366.8c-6-3.9-13-5.8-20.1-5.4l-21.3 1.3c-13.2 .8-25.6-6.4-31.5-18.2l-9.6-19.1c-3.2-6.4-8.4-11.5-14.7-14.7L39.5 301c-11.8-5.9-19-18.3-18.2-31.5l1.3-21.3c.4-7.1-1.5-14.2-5.4-20.1L5.5 210.2c-7.3-11-7.3-25.4 0-36.4L17.2 156c3.9-6 5.8-13 5.4-20.1l-1.3-21.3c-.8-13.2 6.4-25.6 18.2-31.5l19.1-9.6C65 70.2 70.2 65 73.4 58.6L83 39.5c5.9-11.8 18.3-19 31.5-18.2l21.3 1.3c7.1 .4 14.2-1.5 20.1-5.4L173.8 5.5zM272 192a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM1.3 441.8L44.4 339.3c.2 .1 .3 .2 .4 .4l9.6 19.1c11.7 23.2 36 37.3 62 35.8l21.3-1.3c.2 0 .5 0 .7 .2l17.8 11.8c5.1 3.3 10.5 5.9 16.1 7.7l-37.6 89.3c-2.3 5.5-7.4 9.2-13.3 9.7s-11.6-2.2-14.8-7.2L74.4 455.5l-56.1 8.3c-5.7 .8-11.4-1.5-15-6s-4.3-10.7-2.1-16zm248 60.4L211.7 413c5.6-1.8 11-4.3 16.1-7.7l17.8-11.8c.2-.1 .4-.2 .7-.2l21.3 1.3c26 1.5 50.3-12.6 62-35.8l9.6-19.1c.1-.2 .2-.3 .4-.4l43.2 102.5c2.2 5.3 1.4 11.4-2.1 16s-9.3 6.9-15 6l-56.1-8.3-32.2 49.2c-3.2 5-8.9 7.7-14.8 7.2s-11-4.3-13.3-9.7z" />
+                                        d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 150.6 182.6c12.5-12.5 12.5-32.8 0-45.3z" />
                                 </svg>
-                                <div class="tooltip hidden card stack">
-                                    <span><b>My LinkedIn C++ Skills Assessment</b></span>
-                                    <img src="/images/flex/c++.webp" alt="C++ LinkedIn Skills Assessment"
-                                        style="width: auto;" />
+                                <div class="modal-content stack hidden">
+                                    <h2>My C++ Linked In Skills Assessment</h2>
+                                    <div class="stack align-center">
+                                        <img class="border-radius modal-image" src="/images/flex/c++.webp"
+                                            alt="C++ LinkedIn Skills Assessment - Top 5% of 1.6 million people who took this."
+                                            width="500" height="321" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="rack align-center">
                             <span>C</span>
                             <hr class="weight-smaller">
-                            <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                                onmouseleave="showTooltip(event, 'mainBody')">
+                            <div class="icon" onclick="showModal(this)">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
                                     <path
-                                        d="M173.8 5.5c11-7.3 25.4-7.3 36.4 0L228 17.2c6 3.9 13 5.8 20.1 5.4l21.3-1.3c13.2-.8 25.6 6.4 31.5 18.2l9.6 19.1c3.2 6.4 8.4 11.5 14.7 14.7L344.5 83c11.8 5.9 19 18.3 18.2 31.5l-1.3 21.3c-.4 7.1 1.5 14.2 5.4 20.1l11.8 17.8c7.3 11 7.3 25.4 0 36.4L366.8 228c-3.9 6-5.8 13-5.4 20.1l1.3 21.3c.8 13.2-6.4 25.6-18.2 31.5l-19.1 9.6c-6.4 3.2-11.5 8.4-14.7 14.7L301 344.5c-5.9 11.8-18.3 19-31.5 18.2l-21.3-1.3c-7.1-.4-14.2 1.5-20.1 5.4l-17.8 11.8c-11 7.3-25.4 7.3-36.4 0L156 366.8c-6-3.9-13-5.8-20.1-5.4l-21.3 1.3c-13.2 .8-25.6-6.4-31.5-18.2l-9.6-19.1c-3.2-6.4-8.4-11.5-14.7-14.7L39.5 301c-11.8-5.9-19-18.3-18.2-31.5l1.3-21.3c.4-7.1-1.5-14.2-5.4-20.1L5.5 210.2c-7.3-11-7.3-25.4 0-36.4L17.2 156c3.9-6 5.8-13 5.4-20.1l-1.3-21.3c-.8-13.2 6.4-25.6 18.2-31.5l19.1-9.6C65 70.2 70.2 65 73.4 58.6L83 39.5c5.9-11.8 18.3-19 31.5-18.2l21.3 1.3c7.1 .4 14.2-1.5 20.1-5.4L173.8 5.5zM272 192a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM1.3 441.8L44.4 339.3c.2 .1 .3 .2 .4 .4l9.6 19.1c11.7 23.2 36 37.3 62 35.8l21.3-1.3c.2 0 .5 0 .7 .2l17.8 11.8c5.1 3.3 10.5 5.9 16.1 7.7l-37.6 89.3c-2.3 5.5-7.4 9.2-13.3 9.7s-11.6-2.2-14.8-7.2L74.4 455.5l-56.1 8.3c-5.7 .8-11.4-1.5-15-6s-4.3-10.7-2.1-16zm248 60.4L211.7 413c5.6-1.8 11-4.3 16.1-7.7l17.8-11.8c.2-.1 .4-.2 .7-.2l21.3 1.3c26 1.5 50.3-12.6 62-35.8l9.6-19.1c.1-.2 .2-.3 .4-.4l43.2 102.5c2.2 5.3 1.4 11.4-2.1 16s-9.3 6.9-15 6l-56.1-8.3-32.2 49.2c-3.2 5-8.9 7.7-14.8 7.2s-11-4.3-13.3-9.7z" />
+                                        d="M0 64C0 28.7 28.7 0 64 0L213.5 0c17 0 33.3 6.7 45.3 18.7L365.3 125.3c12 12 18.7 28.3 18.7 45.3L384 448c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm208-5.5l0 93.5c0 13.3 10.7 24 24 24L325.5 176 208 58.5zM154.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8l-34.6-40.4 34.6-40.4zm112-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2l-48-56z" />
                                 </svg>
-                                <div class="tooltip hidden card stack">
-                                    <span><b>My LinkedIn C Skills Assessment</b></span>
-                                    <img src="/images/flex/c.webp" alt="C LinkedIn Skills Assessment"
-                                        style="width: auto;" />
+                                <div class="modal-content stack hidden">
+                                    <h2>My LinkedIn C Skills Assessment</h2>
+                                    <div class="stack align-center">
+                                        <img class="border-radius modal-image" src="/images/flex/c.webp"
+                                            alt="C LinkedIn Skills Assessment - Top 5% of 1.9 million people who took this."
+                                            width="500" height="321" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -226,16 +231,18 @@
                         <div class="rack align-center">
                             <span>Java</span>
                             <hr class="weight-smaller">
-                            <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                                onmouseleave="showTooltip(event, 'mainBody')">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                            <div class="icon" onclick="showModal(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
                                     <path
-                                        d="M173.8 5.5c11-7.3 25.4-7.3 36.4 0L228 17.2c6 3.9 13 5.8 20.1 5.4l21.3-1.3c13.2-.8 25.6 6.4 31.5 18.2l9.6 19.1c3.2 6.4 8.4 11.5 14.7 14.7L344.5 83c11.8 5.9 19 18.3 18.2 31.5l-1.3 21.3c-.4 7.1 1.5 14.2 5.4 20.1l11.8 17.8c7.3 11 7.3 25.4 0 36.4L366.8 228c-3.9 6-5.8 13-5.4 20.1l1.3 21.3c.8 13.2-6.4 25.6-18.2 31.5l-19.1 9.6c-6.4 3.2-11.5 8.4-14.7 14.7L301 344.5c-5.9 11.8-18.3 19-31.5 18.2l-21.3-1.3c-7.1-.4-14.2 1.5-20.1 5.4l-17.8 11.8c-11 7.3-25.4 7.3-36.4 0L156 366.8c-6-3.9-13-5.8-20.1-5.4l-21.3 1.3c-13.2 .8-25.6-6.4-31.5-18.2l-9.6-19.1c-3.2-6.4-8.4-11.5-14.7-14.7L39.5 301c-11.8-5.9-19-18.3-18.2-31.5l1.3-21.3c.4-7.1-1.5-14.2-5.4-20.1L5.5 210.2c-7.3-11-7.3-25.4 0-36.4L17.2 156c3.9-6 5.8-13 5.4-20.1l-1.3-21.3c-.8-13.2 6.4-25.6 18.2-31.5l19.1-9.6C65 70.2 70.2 65 73.4 58.6L83 39.5c5.9-11.8 18.3-19 31.5-18.2l21.3 1.3c7.1 .4 14.2-1.5 20.1-5.4L173.8 5.5zM272 192a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM1.3 441.8L44.4 339.3c.2 .1 .3 .2 .4 .4l9.6 19.1c11.7 23.2 36 37.3 62 35.8l21.3-1.3c.2 0 .5 0 .7 .2l17.8 11.8c5.1 3.3 10.5 5.9 16.1 7.7l-37.6 89.3c-2.3 5.5-7.4 9.2-13.3 9.7s-11.6-2.2-14.8-7.2L74.4 455.5l-56.1 8.3c-5.7 .8-11.4-1.5-15-6s-4.3-10.7-2.1-16zm248 60.4L211.7 413c5.6-1.8 11-4.3 16.1-7.7l17.8-11.8c.2-.1 .4-.2 .7-.2l21.3 1.3c26 1.5 50.3-12.6 62-35.8l9.6-19.1c.1-.2 .2-.3 .4-.4l43.2 102.5c2.2 5.3 1.4 11.4-2.1 16s-9.3 6.9-15 6l-56.1-8.3-32.2 49.2c-3.2 5-8.9 7.7-14.8 7.2s-11-4.3-13.3-9.7z" />
+                                        d="M152-16c-13.3 0-24 10.7-24 24 0 38.9 23.4 59.4 39.1 73.1l1.1 1c16.3 14.3 23.8 21.8 23.8 37.9 0 13.3 10.7 24 24 24s24-10.7 24-24c0-38.9-23.4-59.4-39.1-73.1l-1.1-1C183.5 31.7 176 24.1 176 8 176-5.3 165.3-16 152-16zM96 192c-17.7 0-32 14.3-32 32l0 192c0 53 43 96 96 96l192 0c41.8 0 77.4-26.7 90.5-64l5.5 0c70.7 0 128-57.3 128-128S518.7 192 448 192L96 192zM448 384l0-128c35.3 0 64 28.7 64 64s-28.7 64-64 64zM288 8c0-13.3-10.7-24-24-24S240-5.3 240 8c0 38.9 23.4 59.4 39.1 73.1l1.1 1c16.3 14.3 23.8 21.8 23.8 37.9 0 13.3 10.7 24 24 24s24-10.7 24-24c0-38.9-23.4-59.4-39.1-73.1l-1.1-1C295.5 31.7 288 24.1 288 8z" />
                                 </svg>
-                                <div class="tooltip hidden card stack">
-                                    <span><b>My LinkedIn Java Skills Assessment</b></span>
-                                    <img src="/images/flex/java.webp" alt="Java LinkedIn Skills Assessment"
-                                        style="width: auto;" />
+                                <div class="modal-content stack hidden">
+                                    <h2>My LinkedIn Java Skills Assessment</h2>
+                                    <div class="stack align-center">
+                                        <img class="border-radius modal-image" src="/images/flex/java.webp"
+                                            alt="Java LinkedIn Skills Assessment - Top 5% of 3.1 million people who took this."
+                                            width="500" height="321" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -243,16 +250,18 @@
                         <div class="rack align-center">
                             <span>JavaScript</span>
                             <hr class="weight-smaller">
-                            <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                                onmouseleave="showTooltip(event, 'mainBody')">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                            <div class="icon" onclick="showModal(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                                     <path
-                                        d="M173.8 5.5c11-7.3 25.4-7.3 36.4 0L228 17.2c6 3.9 13 5.8 20.1 5.4l21.3-1.3c13.2-.8 25.6 6.4 31.5 18.2l9.6 19.1c3.2 6.4 8.4 11.5 14.7 14.7L344.5 83c11.8 5.9 19 18.3 18.2 31.5l-1.3 21.3c-.4 7.1 1.5 14.2 5.4 20.1l11.8 17.8c7.3 11 7.3 25.4 0 36.4L366.8 228c-3.9 6-5.8 13-5.4 20.1l1.3 21.3c.8 13.2-6.4 25.6-18.2 31.5l-19.1 9.6c-6.4 3.2-11.5 8.4-14.7 14.7L301 344.5c-5.9 11.8-18.3 19-31.5 18.2l-21.3-1.3c-7.1-.4-14.2 1.5-20.1 5.4l-17.8 11.8c-11 7.3-25.4 7.3-36.4 0L156 366.8c-6-3.9-13-5.8-20.1-5.4l-21.3 1.3c-13.2 .8-25.6-6.4-31.5-18.2l-9.6-19.1c-3.2-6.4-8.4-11.5-14.7-14.7L39.5 301c-11.8-5.9-19-18.3-18.2-31.5l1.3-21.3c.4-7.1-1.5-14.2-5.4-20.1L5.5 210.2c-7.3-11-7.3-25.4 0-36.4L17.2 156c3.9-6 5.8-13 5.4-20.1l-1.3-21.3c-.8-13.2 6.4-25.6 18.2-31.5l19.1-9.6C65 70.2 70.2 65 73.4 58.6L83 39.5c5.9-11.8 18.3-19 31.5-18.2l21.3 1.3c7.1 .4 14.2-1.5 20.1-5.4L173.8 5.5zM272 192a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM1.3 441.8L44.4 339.3c.2 .1 .3 .2 .4 .4l9.6 19.1c11.7 23.2 36 37.3 62 35.8l21.3-1.3c.2 0 .5 0 .7 .2l17.8 11.8c5.1 3.3 10.5 5.9 16.1 7.7l-37.6 89.3c-2.3 5.5-7.4 9.2-13.3 9.7s-11.6-2.2-14.8-7.2L74.4 455.5l-56.1 8.3c-5.7 .8-11.4-1.5-15-6s-4.3-10.7-2.1-16zm248 60.4L211.7 413c5.6-1.8 11-4.3 16.1-7.7l17.8-11.8c.2-.1 .4-.2 .7-.2l21.3 1.3c26 1.5 50.3-12.6 62-35.8l9.6-19.1c.1-.2 .2-.3 .4-.4l43.2 102.5c2.2 5.3 1.4 11.4-2.1 16s-9.3 6.9-15 6l-56.1-8.3-32.2 49.2c-3.2 5-8.9 7.7-14.8 7.2s-11-4.3-13.3-9.7z" />
+                                        d="M448 96c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320zM180.9 444.9c-33.7 0-53.2-17.4-63.2-38.5L152 385.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5l0-143.1 42.1 0 0 143.7c0 43.6-25.6 63.5-62.9 63.5zm85.8-43L301 382.1c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6-39.1 0-64.4-18.6-76.7-43z" />
                                 </svg>
-                                <div class="tooltip hidden card stack">
-                                    <span><b>My LinkedIn JavaScript Skills Assessment</b></span>
-                                    <img src="/images/flex/javascript.webp" alt="JavaScript LinkedIn Skills Assessment"
-                                        style="width: auto;" />
+                                <div class="modal-content stack hidden">
+                                    <h2>My LinkedIn JavaScript Skills Assessment</h2>
+                                    <div class="stack align-center">
+                                        <img class="border-radius modal-image" src="/images/flex/javascript.webp"
+                                            alt="JavaScript LinkedIn Skills Assessment - Top 5% of 2.6 million people who took this."
+                                            width="500" height="321" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -260,37 +269,39 @@
                         <div class="rack align-center">
                             <span>Python</span>
                             <hr class="weight-smaller">
-                            <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                                onmouseleave="showTooltip(event, 'mainBody')">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                            <div class="icon" onclick="showModal(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                                     <path
-                                        d="M173.8 5.5c11-7.3 25.4-7.3 36.4 0L228 17.2c6 3.9 13 5.8 20.1 5.4l21.3-1.3c13.2-.8 25.6 6.4 31.5 18.2l9.6 19.1c3.2 6.4 8.4 11.5 14.7 14.7L344.5 83c11.8 5.9 19 18.3 18.2 31.5l-1.3 21.3c-.4 7.1 1.5 14.2 5.4 20.1l11.8 17.8c7.3 11 7.3 25.4 0 36.4L366.8 228c-3.9 6-5.8 13-5.4 20.1l1.3 21.3c.8 13.2-6.4 25.6-18.2 31.5l-19.1 9.6c-6.4 3.2-11.5 8.4-14.7 14.7L301 344.5c-5.9 11.8-18.3 19-31.5 18.2l-21.3-1.3c-7.1-.4-14.2 1.5-20.1 5.4l-17.8 11.8c-11 7.3-25.4 7.3-36.4 0L156 366.8c-6-3.9-13-5.8-20.1-5.4l-21.3 1.3c-13.2 .8-25.6-6.4-31.5-18.2l-9.6-19.1c-3.2-6.4-8.4-11.5-14.7-14.7L39.5 301c-11.8-5.9-19-18.3-18.2-31.5l1.3-21.3c.4-7.1-1.5-14.2-5.4-20.1L5.5 210.2c-7.3-11-7.3-25.4 0-36.4L17.2 156c3.9-6 5.8-13 5.4-20.1l-1.3-21.3c-.8-13.2 6.4-25.6 18.2-31.5l19.1-9.6C65 70.2 70.2 65 73.4 58.6L83 39.5c5.9-11.8 18.3-19 31.5-18.2l21.3 1.3c7.1 .4 14.2-1.5 20.1-5.4L173.8 5.5zM272 192a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM1.3 441.8L44.4 339.3c.2 .1 .3 .2 .4 .4l9.6 19.1c11.7 23.2 36 37.3 62 35.8l21.3-1.3c.2 0 .5 0 .7 .2l17.8 11.8c5.1 3.3 10.5 5.9 16.1 7.7l-37.6 89.3c-2.3 5.5-7.4 9.2-13.3 9.7s-11.6-2.2-14.8-7.2L74.4 455.5l-56.1 8.3c-5.7 .8-11.4-1.5-15-6s-4.3-10.7-2.1-16zm248 60.4L211.7 413c5.6-1.8 11-4.3 16.1-7.7l17.8-11.8c.2-.1 .4-.2 .7-.2l21.3 1.3c26 1.5 50.3-12.6 62-35.8l9.6-19.1c.1-.2 .2-.3 .4-.4l43.2 102.5c2.2 5.3 1.4 11.4-2.1 16s-9.3 6.9-15 6l-56.1-8.3-32.2 49.2c-3.2 5-8.9 7.7-14.8 7.2s-11-4.3-13.3-9.7z" />
+                                        d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2l-40.1 0 0 47.4c0 36.8-31.2 67.8-66.8 67.8l-106.8 0c-29.2 0-53.4 25-53.4 54.3l0 101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3l0-40.7-106.7 0 0-13.6 160.2 0c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7zM167.8 248.1l106.8 0c29.7 0 53.4-24.5 53.4-54.3l0-101.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8 .1-45.2 8-53.4 24.7-53.4 55.6l0 40.7 106.9 0 0 13.6-147 0c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2l36.7 0 0-48.8c0-35.3 30.5-66.4 66.8-66.4zM161.2 64.7a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8z" />
                                 </svg>
-                                <div class="tooltip hidden card stack">
-                                    <span><b>My LinkedIn Python Skills Assessment</b></span>
-                                    <img src="/images/flex/python.webp" alt="Python LinkedIn Skills Assessment"
-                                        style="width: auto;" />
+                                <div class="modal-content stack hidden">
+                                    <h2>My LinkedIn Python Skills Assessment</h2>
+                                    <div class="stack align-center">
+                                        <img class="border-radius modal-image" src="/images/flex/python.webp"
+                                            alt="Python LinkedIn Skills Assessment - Top 5% of 4.8 million people who took this."
+                                            width="500" height="321" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="column stack card minimum-width-smaller">
+                    <div class="column weight-large stack card minimum-width-smaller">
                         <h2>Technology</h2>
                         <div class="rack align-center">
                             <span class="no-text-wrap">C/C++ Build Systems</span>
                             <hr class="weight-smaller">
-                            <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                                onmouseleave="showTooltip(event, 'mainBody')">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                            <div class="icon" onclick="showModal(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
                                     <path
-                                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                        d="M246.9 18.3L271 3.8c21.6-13 46.3-19.8 71.5-19.8 36.8 0 72.2 14.6 98.2 40.7l63.9 63.9c15 15 23.4 35.4 23.4 56.6l0 30.9 19.7 19.7 0 0c15.6-15.6 40.9-15.6 56.6 0s15.6 40.9 0 56.6l-64 64c-15.6 15.6-40.9 15.6-56.6 0s-15.6-40.9 0-56.6L464 240 433.1 240c-21.2 0-41.6-8.4-56.6-23.4l-49.1-49.1c-15-15-23.4-35.4-23.4-56.6l0-12.7c0-11.2-5.9-21.7-15.5-27.4l-41.6-25c-10.4-6.2-10.4-21.2 0-27.4zM50.7 402.7l222.1-222.1 90.5 90.5-222.1 222.1c-25 25-65.5 25-90.5 0s-25-65.5 0-90.5z" />
                                 </svg>
-                                <div class="tooltip hidden card stack">
+                                <div class="modal-content stack hidden">
+                                    <h2>C/C++ Build System Proficiency</h2>
                                     <ul>
                                         <li>Make</li>
+                                        <li>MSBuild</li>
                                         <li>CMake</li>
                                         <li>Conan</li>
-                                        <li>MSBuild</li>
                                     </ul>
                                 </div>
                             </div>
@@ -298,13 +309,13 @@
                         <div class="rack align-center">
                             <span class="no-text-wrap">Web Tooling</span>
                             <hr class="weight-smaller">
-                            <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                                onmouseleave="showTooltip(event, 'mainBody')">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                            <div class="icon" onclick="showModal(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                                     <path
-                                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                        d="M351.9 280l-190.9 0c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zM160.9 232l190.9 0C349 167.5 334.7 108.1 314.4 64.6 303 40.2 290.7 22.8 279.3 12.2 268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4zm-48 0C116.4 146.4 138.5 66.9 170.8 14.7 78.7 47.3 10.9 131.2 1.5 232l111.4 0zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3L1.5 280zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3l-111.4 0zm111.4-48C501.9 131.2 434.1 47.3 342 14.7 374.3 66.9 396.4 146.4 399.9 232l111.4 0z" />
                                 </svg>
-                                <div class="tooltip hidden card stack">
+                                <div class="modal-content stack hidden">
+                                    <h2>Web Technology Proficiency</h2>
                                     <ul>
                                         <li>React</li>
                                         <li>Express</li>
@@ -318,17 +329,17 @@
                         <div class="rack align-center">
                             <span class="no-text-wrap">3D Rendering</span>
                             <hr class="weight-smaller">
-                            <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                                onmouseleave="showTooltip(event, 'mainBody')">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                            <div class="icon" onclick="showModal(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                                     <path
-                                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                        d="M224.3-2.5c19.8-11.4 44.2-11.4 64 0L464.2 99c19.8 11.4 32 32.6 32 55.4l0 203c0 22.9-12.2 44-32 55.4L288.3 514.5c-19.8 11.4-44.2 11.4-64 0L48.5 413c-19.8-11.4-32-32.6-32-55.4l0-203c0-22.9 12.2-44 32-55.4L224.3-2.5zm207.8 360l0-166.1-143.8 83 0 166.1 143.8-83z" />
                                 </svg>
-                                <div class="tooltip hidden card stack">
+                                <div class="modal-content stack hidden">
+                                    <h2>Graphics API Proficiency</h2>
                                     <ul>
                                         <li>OpenGL</li>
-                                        <li>WebGPU</li>
                                         <li>Vulkan</li>
+                                        <li>WebGPU</li>
                                     </ul>
                                 </div>
                             </div>
@@ -336,17 +347,18 @@
                         <div class="rack align-center">
                             <span class="no-text-wrap">Databases</span>
                             <hr class="weight-smaller">
-                            <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                                onmouseleave="showTooltip(event, 'mainBody')">
+                            <div class="icon" onclick="showModal(this)">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                                     <path
-                                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                        d="M448 205.8c-14.8 9.8-31.8 17.7-49.5 24-47 16.8-108.7 26.2-174.5 26.2S96.4 246.5 49.5 229.8c-17.6-6.3-34.7-14.2-49.5-24L0 288c0 44.2 100.3 80 224 80s224-35.8 224-80l0-82.2zm0-77.8l0-48C448 35.8 347.7 0 224 0S0 35.8 0 80l0 48c0 44.2 100.3 80 224 80s224-35.8 224-80zM398.5 389.8C351.6 406.5 289.9 416 224 416S96.4 406.5 49.5 389.8c-17.6-6.3-34.7-14.2-49.5-24L0 432c0 44.2 100.3 80 224 80s224-35.8 224-80l0-66.2c-14.8 9.8-31.8 17.7-49.5 24z" />
                                 </svg>
-                                <div class="tooltip hidden card stack">
+                                <div class="modal-content stack hidden">
+                                    <h2>Database Proficiency</h2>
                                     <ul>
-                                        <li>MySQL</li>
+                                        <li>PostgreSQL</li>
                                         <li>MariaDB</li>
                                         <li>SQLite</li>
+                                        <li>MySQL</li>
                                         <li>MongoDB</li>
                                     </ul>
                                 </div>
@@ -355,13 +367,13 @@
                         <div class="rack align-center">
                             <span class="no-text-wrap">Operating Systems</span>
                             <hr class="weight-smaller">
-                            <div class="icon" onpointermove="showTooltip(event, 'mainBody')"
-                                onmouseleave="showTooltip(event, 'mainBody')">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                            <div class="icon" onclick="showModal(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
                                     <path
-                                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                        d="M348.8 32C340.7 46.1 336 62.5 336 80l0 16-272 0 0 224 272 0 0 64-272 0c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l284.8 0zM336 432c0 17.5 4.7 33.9 12.8 48L120 480c-13.3 0-24-10.7-24-24s10.7-24 24-24l216 0zM432 32l96 0c26.5 0 48 21.5 48 48l0 352c0 26.5-21.5 48-48 48l-96 0c-26.5 0-48-21.5-48-48l0-352c0-26.5 21.5-48 48-48zm24 64c-13.3 0-24 10.7-24 24s10.7 24 24 24l48 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-48 0zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24l48 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-48 0zm56 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" />
                                 </svg>
-                                <div class="tooltip hidden card stack">
+                                <div class="modal-content stack hidden">
+                                    <h2>Operating System Proficiency</h2>
                                     <ul>
                                         <li>Windows 10/11</li>
                                         <li>Ubuntu 20.04/24.04</li>
@@ -379,6 +391,11 @@
                         href="https://github.com/JeremyBankes/portfolio">❤</a> by Jeremy Bankes.
                 </span>
             </div>
+        </div>
+    </div>
+    <div id="modalContainer" class="stack align-center justify-center breathable hidden">
+        <div id="modal" class="stack maximum-width-medium minimum-height-medium width-full card">
+            <div class="content"></div>
         </div>
     </div>
     <div class="icon" id="wallpaperIcon" onpointermove="showTooltip(event, 'mainBody')"
