@@ -85,7 +85,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("background");
     if (isMobileUserAgent()) {
         console.warn("Skipping rendering background on mobile.");
-        canvas.classList.add("backgroundAnimation");
+        const backgroundContainer = document.getElementById("backgroundContainer");
+        backgroundContainer.firstElementChild.classList.add("backgroundAnimation");
     } else {
         let canvasBounds = canvas.getBoundingClientRect();
         const cursorPosition = { x: 0.5, y: 0.5 };

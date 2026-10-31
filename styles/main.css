@@ -110,15 +110,37 @@ h6 {
 
     #profileImageContainer {
         width: 200px;
-        height: 200px;
+        height: 150px;
     }
 
 }
 
+#backgroundContainer {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
 .backgroundAnimation {
-    background: linear-gradient(45deg, #000000, #303035, #000010);
-    background-size: 300% 300%;
-    animation: backgroundVariance 5s ease infinite;
+    position: absolute;
+
+    /* Much larger than the viewport */
+    left: -200vw;
+    right: -200vw;
+    top: -200vh;
+    bottom: -200vh;
+
+    background-color: #080914;
+    background-image:
+        radial-gradient(ellipse at 0% 0%, #174D57 0%, transparent 55%),
+        radial-gradient(ellipse at 0% 25%, #102C40 0%, transparent 55%),
+        radial-gradient(ellipse at 25% 0%, #193D61 0%, transparent 55%),
+        radial-gradient(ellipse at 25% 25%, #384C6A 0%, transparent 55%);
+
+    animation: backgroundVariance 60s ease infinite;
+    will-change: transform;
 }
 
 .titleContainer {
@@ -203,15 +225,23 @@ h6 {
 
 @keyframes backgroundVariance {
     0% {
-        background-position: 10% 0%;
+        transform: translate(0%, 0%) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(-10%, 0%) rotate(-45deg);
     }
 
     50% {
-        background-position: 91% 100%;
+        transform: translate(0%, 10%) rotate(360deg);
+    }
+
+    75% {
+        transform: translate(10%, 0%) rotate(45deg);
     }
 
     100% {
-        background-position: 10% 0%;
+        transform: translate(0%, 0%) rotate(0deg);
     }
 }
 
