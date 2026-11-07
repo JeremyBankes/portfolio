@@ -1,15 +1,19 @@
 :root {
-    --color-page: #FFFFFF08;
-    --color-page-special: #000000CC;
     --font-family-heading: "BrandonGrotesqueBold", sans-serif;
     --font-family-regular: "VarelaRoundRegular", sans-serif;
+
     --color-text: #cccccc;
     --color-text-special: #ffffff;
-    --color-accent: #a7bdcc;
-    --color-accent-special: #eeeeee;
-    --hover-transition-duration: 300ms;
-    --border: none;
-    --color-border: #ffffff10;
+    --color-page: #1a1a1a;
+    --color-page-special: #0A0A0A;
+    --color-input: #252525;
+    --color-input-special: #2A2A2A;
+    --color-input-text: #cccccc;
+    --color-input-text-special: #ffffff;
+    --color-accent: #8eddff;
+    --color-accent-special: #f5cd92;
+    --color-accent-secondary: #1d5aaf;
+    --color-border: #303030;
 }
 
 @font-face {
@@ -34,197 +38,48 @@ h6 {
     font-weight: bold;
 }
 
-#background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    top: 0;
-    left: 0;
+button {
+    text-transform: uppercase;
+    background-color: var(--color-accent-secondary);
+    font-family: var(--font-family-heading);
+    font-weight: bold;
+    font-size: large;
+    padding: var(--space-large);
 }
 
-#profileImageContainer {
-    position: relative;
-    perspective: 1000px;
-    width: 300px;
-    height: 300px;
+hr {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, var(--color-accent-special) 20%, var(--color-accent) 50%, var(--color-accent-special) 80%, rgba(255, 255, 255, 0) 100%);
 }
 
-#profileImage,
-#profileBackImage {
-    position: absolute;
-    transform-style: preserve-3d;
-    transition: transform var(--hover-transition-duration);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    width: 100%;
-    height: 100%;
+.right-gradient {
+    background: transparent;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0) 100%);
+    border-top-right-radius: 40%;
+    border-bottom-right-radius: 40%;
+    margin-left: calc(var(--border-radius) * -1);
+    z-index: -10;
 }
 
-#profileBackImage {
-    transform: rotateY(180deg);
+.left-gradient {
+    background: transparent;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0) 100%);
+    border-top-left-radius: 40%;
+    border-bottom-left-radius: 40%;
+    margin-right: calc(var(--border-radius) * -1);
+    z-index: -10;
 }
 
-#profileImageContainer:hover #profileImage {
-    transform: rotateY(180deg);
+.decoration-diamond {
+    width: var(--space-small);
+    height: var(--space-small);
+    background: var(--color-accent-special);
+    rotate: 45deg;
 }
 
-#profileImageContainer:hover #profileBackImage {
-    transform: rotateY(0deg);
-}
-
-#wallpaperIcon {
-    position: fixed;
-    bottom: var(--space-small);
-    right: var(--space-small);
-}
-
-@media (max-width: 600px) {
-
-    #wallpaperIcon {
-        display: none;
-    }
-
-    #profileImageContainer {
-        width: 150px;
-        height: 150px;
-    }
-
-
-}
-
-.backgroundAnimation {
-    background: linear-gradient(45deg, #000000, #303035, #000010);
-    background-size: 300% 300%;
-    animation: backgroundVariance 5s ease infinite;
-}
-
-.titleContainer {
-    position: relative;
-}
-
-.locationContainer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
-
-.iconContainer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
-.icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-.icon svg {
-    animation-name: shake;
-    animation-duration: 5s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-}
-
-.icon path {
-    fill: var(--color-accent);
-    transition: fill var(--hover-transition-duration) ease-out;
-}
-
-.icon:hover path {
-    fill: var(--color-accent-special);
-}
-
-.tooltip {
-    position: fixed;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.tooltip.card {
-    background-color: var(--color-page-special);
-}
-
-.tooltip.hidden {
-    display: none;
-}
-
-.heart {
-    display: inline-block;
-    transition: color 500ms ease-out;
-    animation-name: heart;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-play-state: paused;
-}
-
-.heart:hover {
-    color: #900000;
-    transform: scale(1.15);
-    animation-play-state: running;
-}
-
-@keyframes backgroundVariance {
-    0% {
-        background-position: 10% 0%;
-    }
-
-    50% {
-        background-position: 91% 100%;
-    }
-
-    100% {
-        background-position: 10% 0%;
-    }
-}
-
-@keyframes shake {
-    0% {
-        transform: rotateZ(0);
-    }
-
-    90% {
-        transform: rotateZ(0);
-    }
-
-    92.5% {
-        transform: rotateZ(20deg);
-    }
-
-    97.5% {
-        transform: rotateZ(-20deg);
-    }
-
-    100% {
-        transform: rotateZ(0);
-    }
-}
-
-@keyframes heart {
-    0% {
-        transform: scale(1.0);
-    }
-
-    40% {
-        transform: scale(0.75);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    60% {
-        transform: scale(0.75);
-    }
-
-    100% {
-        transform: scale(1.0);
-    }
+.security-clearance {
+    border: 1px solid var(--color-accent-special);
+    border-radius: var(--border-radius);
+    padding: var(--space-small);
 }
 
 ::-webkit-scrollbar {
